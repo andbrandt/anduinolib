@@ -29,7 +29,6 @@ private:
 
 extern Time time;
 
-
     }
 }
 #endif
