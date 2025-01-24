@@ -4,7 +4,7 @@ namespace anduinolib {
     namespace rc {
         namespace sim {
 
-void SimulatorBase::Restart() {
+void SimulatorBase::RestartSim() {
 }
 
 void SimulatorBase::BlockSim() {

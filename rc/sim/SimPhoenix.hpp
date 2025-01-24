@@ -11,7 +11,9 @@ namespace anduinolib {
 
             class SimulatorPhoenix : public SimulatorBase {
             public:
-                void Restart();
+                void InitSim();
+
+                void RestartSim();
 
                 void BlockSim();
 

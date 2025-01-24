@@ -1,14 +1,34 @@
-// #include "Arduino.h"
-
 #include <Mouse.h>
 #include <Keyboard.h>
 #include "SimRealFlight9.hpp"
+
+#include "../../io/usb-hid/KeyboardCtl.hpp"
+
+using namespace anduinolib::io::usbHid;
 
 namespace anduinolib {
     namespace rc {
         namespace sim {
 
-void SimulatorRealFlight9::Restart() {
+void SimulatorRealFlight9::InitSim() {
+    Keyboard.write(KEY_LEFT_GUI);
+    delay(500);
+    char killSimString[] = "taskkill /IM RealFlight.exe";
+    keyboardCtl.streamKeyString(killSimString);
+    delay(3000);
+    Keyboard.write(KEY_RETURN);
+
+    delay(500);
+    Keyboard.write(KEY_LEFT_GUI);
+    delay(500);
+    char launchSimString[] = "RealFlight";
+    keyboardCtl.streamKeyString(launchSimString);
+    delay(3000);
+    Keyboard.write(KEY_RETURN);
+}
+
+
+void SimulatorRealFlight9::RestartSim() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 

@@ -10,13 +10,13 @@ namespace anduinolib {
             using namespace anduinolib::rc::sim;
             class SimulatorRealFlightBasic : public SimulatorBase {
             public:
-                void Restart();
+                void InitSim();
+
+                void RestartSim();
 
                 void BlockSim();
 
                 void UnBlockSim();
-
-                void InitSim();
 
                 void EasyAircraft();
 

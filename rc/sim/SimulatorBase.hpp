@@ -11,7 +11,7 @@ class SimulatorBase {
 public:
     virtual ~SimulatorBase() = default;
 
-    virtual void Restart();
+    virtual void RestartSim();
 
     virtual void BlockSim();
 

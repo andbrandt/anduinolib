@@ -11,7 +11,9 @@ using namespace anduinolib::rc::sim;
 
 class SimulatorRealFlight9 : public SimulatorBase {
 public:
-    void Restart();
+    void InitSim();
+
+    void RestartSim();
 
     void BlockSim();
 

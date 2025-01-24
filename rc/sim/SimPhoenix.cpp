@@ -4,11 +4,32 @@
 #include <Keyboard.h>
 #include "SimPhoenix.hpp"
 
+#include "../../io/usb-hid/KeyboardCtl.hpp"
+
+using namespace anduinolib::io::usbHid;
+
 namespace anduinolib {
     namespace rc {
         namespace sim {
 
-void SimulatorPhoenix::Restart() {
+void SimulatorPhoenix::InitSim() {
+    Keyboard.write(KEY_LEFT_GUI);
+    delay(500);
+    char killSimString[] = "taskkill /IM phoenixRC.exe";
+    keyboardCtl.streamKeyString(killSimString);
+    delay(3000);
+    Keyboard.write(KEY_RETURN);
+
+    delay(500);
+    Keyboard.write(KEY_LEFT_GUI);
+    delay(500);
+    char launchSimString[] = "phoenixRC";
+    keyboardCtl.streamKeyString(launchSimString);
+    delay(3000);
+    Keyboard.write(KEY_RETURN);
+}
+
+void SimulatorPhoenix::RestartSim() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
@@ -28,10 +49,6 @@ void SimulatorPhoenix::BlockSim() {
 void SimulatorPhoenix::UnBlockSim() {
     Keyboard.write(KEY_ESC);
 }
-
-
-//            phoenixRC.exe
-
 
 void SimulatorPhoenix::EasyAircraft() {
     // Always start unblocking - in case sim is currently blocked
