@@ -6,9 +6,13 @@ namespace io {
 namespace usbHid {
 class KeyboardCtl {
 public:
-    void Begin();
-    void Poll();
+    static void Begin();
+    static void Poll();
+    static void StreamKeyMap(unsigned char key);
+    static void StreamKeyChar(char key);
+    static void streamKeyString(char *keyString);
 };
+    extern KeyboardCtl keyboardCtl;
 }
 }
 }
