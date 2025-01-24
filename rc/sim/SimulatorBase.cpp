@@ -7,10 +7,13 @@ namespace anduinolib {
 void SimulatorBase::Restart() {
 }
 
-void SimulatorBase::Block() {
+void SimulatorBase::BlockSim() {
 }
 
-void SimulatorBase::UnBlock() {
+void SimulatorBase::UnBlockSim() {
+}
+
+void SimulatorBase::InitSim() {
 }
 
 void SimulatorBase::EasyAircraft() {

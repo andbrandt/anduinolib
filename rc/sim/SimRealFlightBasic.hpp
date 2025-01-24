@@ -12,9 +12,11 @@ namespace anduinolib {
             public:
                 void Restart();
 
-                void Block();
+                void BlockSim();
 
-                void UnBlock();
+                void UnBlockSim();
+
+                void InitSim();
 
                 void EasyAircraft();
 

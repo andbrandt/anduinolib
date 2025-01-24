@@ -10,16 +10,16 @@ namespace anduinolib {
 
 void SimulatorRealFlight9::Restart() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(' ');
     delay(10);
     Keyboard.release(' ');
 }
 
-void SimulatorRealFlight9::Block() {
+void SimulatorRealFlight9::BlockSim() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(KEY_LEFT_ALT);
     Keyboard.press('a');
@@ -29,7 +29,7 @@ void SimulatorRealFlight9::Block() {
     Keyboard.release(KEY_LEFT_ALT);
 }
 
-void SimulatorRealFlight9::UnBlock() {
+void SimulatorRealFlight9::UnBlockSim() {
     Keyboard.press(KEY_ESC);
     delay(50);
     Keyboard.write(KEY_ESC);
@@ -38,7 +38,7 @@ void SimulatorRealFlight9::UnBlock() {
 
 void SimulatorRealFlight9::EasyAircraft() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(KEY_LEFT_ALT);
     Keyboard.press('a');
@@ -68,7 +68,7 @@ void SimulatorRealFlight9::EasyAircraft() {
 
 void SimulatorRealFlight9::AcroAircraft() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(KEY_LEFT_ALT);
     Keyboard.press('a');

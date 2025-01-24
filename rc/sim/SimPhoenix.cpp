@@ -10,14 +10,14 @@ namespace anduinolib {
 
 void SimulatorPhoenix::Restart() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.write('b');
 }
 
-void SimulatorPhoenix::Block() {
+void SimulatorPhoenix::BlockSim() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(KEY_RIGHT_CTRL);
     Keyboard.press('m');
@@ -25,13 +25,17 @@ void SimulatorPhoenix::Block() {
     Keyboard.release(KEY_RIGHT_CTRL);
 }
 
-void SimulatorPhoenix::UnBlock() {
+void SimulatorPhoenix::UnBlockSim() {
     Keyboard.write(KEY_ESC);
 }
 
+
+//            phoenixRC.exe
+
+
 void SimulatorPhoenix::EasyAircraft() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(KEY_RIGHT_CTRL);
     Keyboard.press('m');
@@ -50,7 +54,7 @@ void SimulatorPhoenix::EasyAircraft() {
 
 void SimulatorPhoenix::AcroAircraft() {
     // Always start unblocking - in case sim is currently blocked
-    UnBlock();
+    UnBlockSim();
 
     Keyboard.press(KEY_RIGHT_CTRL);
     Keyboard.press('m');

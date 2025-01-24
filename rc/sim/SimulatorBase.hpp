@@ -13,9 +13,11 @@ public:
 
     virtual void Restart();
 
-    virtual void Block();
+    virtual void BlockSim();
 
-    virtual void UnBlock();
+    virtual void UnBlockSim();
+
+    virtual void InitSim();
 
     virtual void EasyAircraft();
 
