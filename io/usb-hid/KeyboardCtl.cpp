@@ -16,7 +16,6 @@ namespace usbHid {
         int y = 1;
     }
 
-    // ¤¤¤¤ Move function in this section to general ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
     static void KeyboardCtl::StreamKeyMap(unsigned char key) {
         switch(key) {
             case '\\':
@@ -66,7 +65,6 @@ namespace usbHid {
         }
     }
 
-// ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
 }
 }
 }
