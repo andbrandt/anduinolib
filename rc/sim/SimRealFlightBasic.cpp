@@ -34,6 +34,18 @@ void SimulatorRealFlightBasic::InitSim() {
     keyboardCtl.streamKeyString(launchSimString);
     delay(3000);
     Keyboard.write(KEY_RETURN);
+
+    delay(5000);
+
+    Keyboard.write(KEY_RIGHT_ARROW);
+    delay(10);
+    Keyboard.write(KEY_RIGHT_ARROW);
+    delay(10);
+    Keyboard.write(KEY_DOWN_ARROW);
+    delay(10);
+    Keyboard.write(KEY_RIGHT_ARROW);
+    delay(10);
+
 }
 
 void SimulatorRealFlightBasic::RestartSim() {
@@ -86,23 +98,16 @@ void SimulatorRealFlightBasic::EasyAircraft() {
 
     Keyboard.write(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    Keyboard.write(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    Keyboard.write(KEY_DOWN_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    Keyboard.write(KEY_DOWN_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    Keyboard.write(KEY_DOWN_ARROW);
     delay(10);
     Keyboard.write(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
 }
 
 void SimulatorRealFlightBasic::AcroAircraft() {
@@ -111,21 +116,13 @@ void SimulatorRealFlightBasic::AcroAircraft() {
 
     Keyboard.write(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(10);
     Keyboard.write(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    Keyboard.write(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    Keyboard.write(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    Keyboard.write(KEY_UP_ARROW);
     delay(10);
     Keyboard.write(KEY_RIGHT_ARROW);
 }

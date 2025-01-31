@@ -11,20 +11,7 @@ namespace anduinolib {
         namespace sim {
 
 void SimulatorRealFlight9::InitSim() {
-    Keyboard.write(KEY_LEFT_GUI);
-    delay(500);
-    char killSimString[] = "taskkill /IM RealFlight.exe";
-    keyboardCtl.streamKeyString(killSimString);
-    delay(3000);
-    Keyboard.write(KEY_RETURN);
-
-    delay(500);
-    Keyboard.write(KEY_LEFT_GUI);
-    delay(500);
-    char launchSimString[] = "RealFlight";
-    keyboardCtl.streamKeyString(launchSimString);
-    delay(3000);
-    Keyboard.write(KEY_RETURN);
+    EasyAircraft();
 }
 
 
@@ -35,6 +22,8 @@ void SimulatorRealFlight9::RestartSim() {
     Keyboard.press(' ');
     delay(10);
     Keyboard.release(' ');
+    delay(10);
+
 }
 
 void SimulatorRealFlight9::BlockSim() {
@@ -57,61 +46,109 @@ void SimulatorRealFlight9::UnBlockSim() {
 }
 
 void SimulatorRealFlight9::EasyAircraft() {
+    int delayConst = 10;
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
     Keyboard.press(KEY_LEFT_ALT);
+    delay(delayConst);
     Keyboard.press('a');
+    delay(delayConst);
     Keyboard.release('a');
+    delay(delayConst);
     Keyboard.press('a');
+    delay(delayConst);
     Keyboard.release('a');
+    delay(delayConst);
     Keyboard.release(KEY_LEFT_ALT);
+    delay(delayConst);
 
-    delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_LEFT_ARROW);
-    delay(50);
-    Keyboard.write(KEY_LEFT_ARROW);
-    delay(50);
-    Keyboard.write(KEY_RIGHT_ARROW);
-    delay(50);
-    Keyboard.write(KEY_DOWN_ARROW);
-    delay(50);
-    Keyboard.write(KEY_DOWN_ARROW);
-    delay(500);
-
+    Keyboard.write('e');
+    delay(delayConst);
+    Keyboard.press(KEY_LEFT_ALT);
+    delay(delayConst);
+    Keyboard.press(KEY_KP_4);
+    delay(delayConst);
+    Keyboard.release(KEY_KP_4);
+    delay(delayConst);
+    Keyboard.press(KEY_KP_5);
+    delay(delayConst);
+    Keyboard.release(KEY_KP_5);
+    delay(delayConst);
+    Keyboard.release(KEY_LEFT_ALT);
+    delay(delayConst);
+    Keyboard.write('f');
+    delay(delayConst);
+    Keyboard.write('l');
+    delay(delayConst);
+    Keyboard.write('i');
+    delay(delayConst);
+    Keyboard.write('t');
+    delay(delayConst);
+    Keyboard.write('e');
+    delay(delayConst);
+    Keyboard.write(' ');
+    delay(delayConst);
+    Keyboard.write('t');
+    delay(delayConst);
+    Keyboard.write('i');
+    delay(delayConst);
+    Keyboard.write('m');
+    delay(delayConst);
+    Keyboard.write('b');
+    delay(delayConst);
+    Keyboard.write('e');
+    delay(delayConst);
+    Keyboard.write('r');
+    delay(delayConst);
+    Keyboard.write(' ');
+    delay(delayConst);
+    Keyboard.write('X');
+    delay(delayConst);
+    Keyboard.write(' ');
+    delay(delayConst);
+    Keyboard.write('1');
+    delay(delayConst);
+    Keyboard.write('.');
+    delay(delayConst);
+    Keyboard.write('2');
+    delay(delayConst);
+    Keyboard.write('m');
+    delay(250);
     Keyboard.write(KEY_RETURN);
+    delay(delayConst);
 }
 
 void SimulatorRealFlight9::AcroAircraft() {
+    int delayConst = 10;
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
     Keyboard.press(KEY_LEFT_ALT);
+    delay(delayConst);
     Keyboard.press('a');
+    delay(delayConst);
     Keyboard.release('a');
+    delay(delayConst);
     Keyboard.press('a');
+    delay(delayConst);
     Keyboard.release('a');
+    delay(delayConst);
     Keyboard.release(KEY_LEFT_ALT);
+    delay(delayConst);
 
-    delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_LEFT_ARROW);
-    delay(50);
-    Keyboard.write(KEY_LEFT_ARROW);
-    delay(50);
-    Keyboard.write(KEY_RIGHT_ARROW);
-    delay(50);
-    Keyboard.write(KEY_DOWN_ARROW);
-    delay(500);
-
+    Keyboard.write('e');
+    delay(delayConst);
+    Keyboard.write('x');
+    delay(delayConst);
+    Keyboard.write('t');
+    delay(delayConst);
+    Keyboard.write('r');
+    delay(delayConst);
+    Keyboard.write('a');
+    delay(250);
     Keyboard.write(KEY_RETURN);
+    delay(delayConst);
 }
 
         }
