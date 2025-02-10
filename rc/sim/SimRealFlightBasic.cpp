@@ -1,7 +1,3 @@
-// #include "Arduino.h"
-
-#include <Mouse.h>
-#include <Keyboard.h>
 #include "SimRealFlightBasic.hpp"
 #include "../../io/usb-hid/KeyboardCtl.hpp"
 
@@ -12,38 +8,39 @@ namespace anduinolib {
         namespace sim {
 
 void SimulatorRealFlightBasic::InitSim() {
-    Keyboard.write(KEY_LEFT_GUI);
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char killSimString[] = "taskkill /IM RealFlight.exe";
-    keyboardCtl.streamKeyString(killSimString);
+    KeyboardCtl::streamKeyString(killSimString);
     delay(3000);
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
     delay(500);
-    Keyboard.write(KEY_LEFT_GUI);
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char delIniString[] = "cmd.exe /c del \"c:\\users\\%USERNAME%\\Documents\\RealFlight Basic\\RealFlightBasic.ini\"";
-    keyboardCtl.streamKeyString(delIniString);
+    KeyboardCtl::streamKeyString(delIniString);
     delay(3000);
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
     delay(500);
-    Keyboard.write(KEY_LEFT_GUI);
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char launchSimString[] = "RealFlight";
-    keyboardCtl.streamKeyString(launchSimString);
+    KeyboardCtl::streamKeyString(launchSimString);
     delay(3000);
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
     delay(5000);
 
-    Keyboard.write(KEY_RIGHT_ARROW);
+    // Start selecting Easy Aircraft after deleting ini file
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
 
 }
@@ -52,19 +49,19 @@ void SimulatorRealFlightBasic::RestartSim() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
 }
 
@@ -72,41 +69,41 @@ void SimulatorRealFlightBasic::BlockSim() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
 }
 
 void SimulatorRealFlightBasic::UnBlockSim() {
-    Keyboard.write(KEY_LEFT_ARROW);
-    delay(10);
-    Keyboard.write(KEY_LEFT_ARROW);
-    delay(10);
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_ARROW, 10);
+//    delay(10);
+//    KeyboardCtl::StreamKeyChar(KEY_LEFT_ARROW);
+//    delay(10);
 }
 
 void SimulatorRealFlightBasic::EasyAircraft() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW);
     delay(10);
-    Keyboard.write(KEY_DOWN_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
 }
 
@@ -114,17 +111,17 @@ void SimulatorRealFlightBasic::AcroAircraft() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_UP_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW);
     delay(10);
-    Keyboard.write(KEY_RIGHT_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW);
 }
 
         }

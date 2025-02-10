@@ -16,7 +16,7 @@ public: // Overloaded base class functions
 
     PushButton(int pinPushButton);
 
-    virtual void PushButton::Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEvent,
+    virtual bool PushButton::Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEvent,
                                    UiEvent::UiEventsExternal shortPressX1Event,
                                    UiEvent::UiEventsExternal shortPressX2Event);
 

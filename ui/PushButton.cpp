@@ -1,8 +1,9 @@
 #include "Arduino.h"
 
-#include "PushButtonBase.hpp"
+#include "PushButton.hpp"
 #include "../../../HAL.hpp"
 #include "../sys/Time.hpp"
+#include "../debug/Debug.hpp"
 
 using namespace anduinolib::sys;
 
@@ -14,7 +15,8 @@ PushButton::PushButton(int pinPushButton) {
     pinMode(m_pinPushButton, INPUT_PULLUP);
 }
 
-void PushButton::Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEvent,
+// Return true if button is pressed during Begin call
+bool PushButton::Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEvent,
                        UiEvent::UiEventsExternal shortPressX1Event,
                        UiEvent::UiEventsExternal shortPressX2Event) {
     DEBUG_PRINT("PushButton::Begin");
@@ -27,6 +29,8 @@ void PushButton::Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEven
     m_longPressEvent = longPressEvent;
     m_shortPressX1Event = shortPressX1Event;
     m_shortPressX2Event = shortPressX2Event;
+
+    return (!digitalRead(m_pinPushButton));
 }
 
 void PushButton::Poll() {

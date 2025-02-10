@@ -1,9 +1,9 @@
 #ifndef LED_PUSHBUTTON_h
 #define LED_PUSHBUTTON_h
 
-#include <Arduino.h> 
+#include <Arduino.h>
 #include "LED.hpp"
-#include "PushButtonBase.hpp"
+#include "PushButton.hpp"
 
 namespace anduinolib {
     namespace ui {
@@ -15,7 +15,7 @@ public:
     LedPushButton(int pinLed, int levelOff, int levelOn, int pinPushButton);
 
     // Overloaded base class functions
-    void Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEvent,
+    bool Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEvent,
                UiEvent::UiEventsExternal shortPressX1Event, UiEvent::UiEventsExternal shortPressX2Event);
 
     void Poll() override;

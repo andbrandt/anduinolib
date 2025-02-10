@@ -1,7 +1,3 @@
-// #include "Arduino.h"
-
-#include <Mouse.h>
-#include <Keyboard.h>
 #include "SimPhoenix.hpp"
 
 #include "../../io/usb-hid/KeyboardCtl.hpp"
@@ -13,82 +9,74 @@ namespace anduinolib {
         namespace sim {
 
 void SimulatorPhoenix::InitSim() {
-    Keyboard.write(KEY_LEFT_GUI);
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char killSimString[] = "taskkill /IM phoenixRC.exe";
-    keyboardCtl.streamKeyString(killSimString);
+    KeyboardCtl::streamKeyString(killSimString);
     delay(3000);
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
     delay(500);
-    Keyboard.write(KEY_LEFT_GUI);
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char launchSimString[] = "phoenixRC";
-    keyboardCtl.streamKeyString(launchSimString);
+    KeyboardCtl::streamKeyString(launchSimString);
     delay(3000);
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(4000);
 }
 
 void SimulatorPhoenix::RestartSim() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.write('b');
+    KeyboardCtl::StreamKeyChar('b');
 }
 
 void SimulatorPhoenix::BlockSim() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.press(KEY_RIGHT_CTRL);
-    Keyboard.press('m');
-    Keyboard.release('m');
-    Keyboard.release(KEY_RIGHT_CTRL);
+    KeyboardCtl::Press(KEY_RIGHT_CTRL);
+    KeyboardCtl::StreamKeyChar('m');
+    KeyboardCtl::Release(KEY_RIGHT_CTRL);
 }
 
 void SimulatorPhoenix::UnBlockSim() {
-    Keyboard.write(KEY_ESC);
+    KeyboardCtl::StreamKeyChar(KEY_ESC);
 }
 
 void SimulatorPhoenix::EasyAircraft() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.press(KEY_RIGHT_CTRL);
-    Keyboard.press('m');
-    Keyboard.release('m');
-    Keyboard.release(KEY_RIGHT_CTRL);
+    KeyboardCtl::Press(KEY_RIGHT_CTRL);
+    KeyboardCtl::StreamKeyChar('m');
+    KeyboardCtl::Release(KEY_RIGHT_CTRL);
 
     delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_DOWN_ARROW);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, 50);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, 50);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, 50);
 
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
 
 void SimulatorPhoenix::AcroAircraft() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    Keyboard.press(KEY_RIGHT_CTRL);
-    Keyboard.press('m');
-    Keyboard.release('m');
-    Keyboard.release(KEY_RIGHT_CTRL);
+    KeyboardCtl::Press(KEY_RIGHT_CTRL);
+    KeyboardCtl::StreamKeyChar('m');
+    KeyboardCtl::Release(KEY_RIGHT_CTRL);
 
     delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_UP_ARROW);
-    delay(50);
-    Keyboard.write(KEY_DOWN_ARROW);
-    delay(50);
-    Keyboard.write(KEY_DOWN_ARROW);
-    delay(50);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, 50);
+    KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, 50);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, 50);
+    KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, 50);
 
-    Keyboard.write(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
 
         }
