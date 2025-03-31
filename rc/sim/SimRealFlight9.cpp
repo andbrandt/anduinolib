@@ -12,15 +12,7 @@ void SimulatorRealFlight9::InitSim() {
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char killSimString[] = "taskkill /IM RealFlight.exe";
-    KeyboardCtl::streamKeyString(killSimString);
-    delay(3000);
-    KeyboardCtl::StreamKeyChar(KEY_RETURN);
-
-    delay(500);
-    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
-    delay(500);
-    char delIniString[] = "cmd.exe /c del \"c:\\users\\%USERNAME%\\Documents\\RealFlight Basic\\RealFlightBasic.ini\"";
-    KeyboardCtl::streamKeyString(delIniString);
+    KeyboardCtl::streamKeyString(killSimString, 25);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
@@ -28,13 +20,14 @@ void SimulatorRealFlight9::InitSim() {
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char launchSimString[] = "C:\\Program Files (x86)\\RealFlight9\\RealFlight.exe";
-    KeyboardCtl::streamKeyString(launchSimString);
+    KeyboardCtl::streamKeyString(launchSimString, 25);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
-    delay(5000);
+    delay(20000);
 
     EasyAircraft();
+    delay(1000);
 }
 
 
@@ -67,6 +60,7 @@ void SimulatorRealFlight9::UnBlockSim() {
 
 void SimulatorRealFlight9::EasyAircraft() {
     int delayConst = 10;
+    int charDuration = 10;
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
@@ -80,54 +74,71 @@ void SimulatorRealFlight9::EasyAircraft() {
     KeyboardCtl::StreamKeyChar('e');
     delay(delayConst);
     KeyboardCtl::Press(KEY_LEFT_ALT);
-    KeyboardCtl::StreamKeyChar(KEY_KP_4, delayConst);
-    KeyboardCtl::StreamKeyChar(KEY_KP_5, delayConst);
+    KeyboardCtl::StreamKeyChar(KEY_KP_4, charDuration);
+    KeyboardCtl::StreamKeyChar(KEY_KP_5, charDuration);
     KeyboardCtl::Release(KEY_LEFT_ALT);
     delay(delayConst);
-    KeyboardCtl::StreamKeyChar('f', delayConst);
-    KeyboardCtl::StreamKeyChar('l', delayConst);
-    KeyboardCtl::StreamKeyChar('i', delayConst);
-    KeyboardCtl::StreamKeyChar('t', delayConst);
-    KeyboardCtl::StreamKeyChar('e', delayConst);
-    KeyboardCtl::StreamKeyChar(' ', delayConst);
-    KeyboardCtl::StreamKeyChar('t', delayConst);
-    KeyboardCtl::StreamKeyChar('i', delayConst);
-    KeyboardCtl::StreamKeyChar('m', delayConst);
-    KeyboardCtl::StreamKeyChar('b', delayConst);
-    KeyboardCtl::StreamKeyChar('e', delayConst);
-    KeyboardCtl::StreamKeyChar('r', delayConst);
-    KeyboardCtl::StreamKeyChar(' ', delayConst);
-    KeyboardCtl::StreamKeyChar('X', delayConst);
-    KeyboardCtl::StreamKeyChar(' ', delayConst);
-    KeyboardCtl::StreamKeyChar('1', delayConst);
-    KeyboardCtl::StreamKeyChar('.', delayConst);
-    KeyboardCtl::StreamKeyChar('2', delayConst);
-    KeyboardCtl::StreamKeyChar('m', delayConst);
-    delay(250);
-    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar('f', charDuration);
     delay(delayConst);
+    KeyboardCtl::StreamKeyChar('l', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('i', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('t', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('e', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar(' ', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('t', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('i', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('m', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('b', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('e', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('r', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar(' ', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('1', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('.', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('5', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('m', charDuration);
+    delay(3000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
 
 void SimulatorRealFlight9::AcroAircraft() {
     int delayConst = 10;
+    int charDuration = 10;
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
     KeyboardCtl::Press(KEY_LEFT_ALT);
     delay(delayConst);
-    KeyboardCtl::StreamKeyChar('a', delayConst);
-    KeyboardCtl::StreamKeyChar('a', delayConst);
+    KeyboardCtl::StreamKeyChar('a', charDuration);
+    KeyboardCtl::StreamKeyChar('a', charDuration);
     KeyboardCtl::Release(KEY_LEFT_ALT);
     delay(delayConst);
 
-    KeyboardCtl::StreamKeyChar('e', delayConst);
-    KeyboardCtl::StreamKeyChar('x', delayConst);
-    KeyboardCtl::StreamKeyChar('t', delayConst);
-    KeyboardCtl::StreamKeyChar('r', delayConst);
-    KeyboardCtl::StreamKeyChar('a', delayConst);
-    delay(250);
-    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    KeyboardCtl::StreamKeyChar('e', charDuration);
     delay(delayConst);
+    KeyboardCtl::StreamKeyChar('x', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('t', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('r', charDuration);
+    delay(delayConst);
+    KeyboardCtl::StreamKeyChar('a', charDuration);
+    delay(1000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
 
         }
