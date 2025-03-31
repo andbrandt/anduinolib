@@ -22,6 +22,9 @@ public:
     void EasyAircraft();
 
     void AcroAircraft();
+
+private:
+    void InitSimAirport();
 };
 
         }
