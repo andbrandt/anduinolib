@@ -9,18 +9,37 @@ namespace anduinolib {
         namespace sim {
 
 void SimulatorRealFlight9::InitSim() {
+    KeyboardCtl::StreamKeyChar(KEY_ESC);
+    delay(100);
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char killSimString[] = "taskkill /IM RealFlight.exe";
-    KeyboardCtl::streamKeyString(killSimString, 25);
+    KeyboardCtl::streamKeyString(killSimString, 1);
+    delay(500);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(3000);
+
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
+    delay(500);
+    char NotepadString[] = "notepad";
+    KeyboardCtl::streamKeyString(NotepadString, 25);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
-
     delay(500);
+    KeyboardCtl::Press(KEY_LEFT_ALT);
+    KeyboardCtl::StreamKeyChar(' ');
+    KeyboardCtl::StreamKeyChar('a');
+    KeyboardCtl::Release(KEY_LEFT_ALT);
+    char NotepadString2[] = "Warning: To work correctly, SimTimer requires that NumLock is enabled.";
+    KeyboardCtl::streamKeyString(NotepadString2, 25);
+    delay(3000);
+
+    KeyboardCtl::StreamKeyChar(KEY_ESC);
+    delay(100);
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char launchSimString[] = "C:\\Program Files (x86)\\RealFlight9\\RealFlight.exe";
-    KeyboardCtl::streamKeyString(launchSimString, 25);
+    KeyboardCtl::streamKeyString(launchSimString, 1);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
 
@@ -66,62 +85,16 @@ void SimulatorRealFlight9::EasyAircraft() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    KeyboardCtl::Press(KEY_LEFT_ALT);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('a', delayConst);
-    KeyboardCtl::StreamKeyChar('a',delayConst);
-    KeyboardCtl::Release(KEY_LEFT_ALT);
+    // Use "Quick Load" search function to get aircraft without timing issues
+    KeyboardCtl::Press(KEY_LEFT_CTRL);
+    KeyboardCtl::StreamKeyChar('f');
+    KeyboardCtl::Release(KEY_LEFT_CTRL);
     delay(delayConst);
 
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar(KEY_BACKSPACE, charDuration);
-
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e');
-    delay(delayConst);
-    KeyboardCtl::Press(KEY_LEFT_ALT);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar(KEY_KP_4, charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar(KEY_KP_5, charDuration);
-    delay(delayConst);
-    KeyboardCtl::Release(KEY_LEFT_ALT);
-
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('f', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('l', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('i', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('t', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar(' ', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('t', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('i', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('m', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('b', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('r', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar(' ', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('1', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('.', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('5', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('m', charDuration);
-    delay(1500);
+    // Enter name of aircraft
+    char aircraftSimString[] = "ElectriStar";
+    KeyboardCtl::streamKeyString(aircraftSimString, 25);
+    delay(1000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
 
@@ -131,29 +104,15 @@ void SimulatorRealFlight9::AcroAircraft() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
-    KeyboardCtl::Press(KEY_LEFT_ALT);
+   // Use "Quick Load" search function to get aircraft without timing issues
+    KeyboardCtl::Press(KEY_LEFT_CTRL);
+    KeyboardCtl::StreamKeyChar('f');
+    KeyboardCtl::Release(KEY_LEFT_CTRL);
     delay(delayConst);
-    KeyboardCtl::StreamKeyChar('a', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('a', charDuration);
-    delay(delayConst);
-    KeyboardCtl::Release(KEY_LEFT_ALT);
 
-
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar(KEY_BACKSPACE, charDuration);
-
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('x', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('t', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('r', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('a', charDuration);
-
+    // Enter name of aircraft
+    char aircraftSimString[] = "Extra 300L";
+    KeyboardCtl::streamKeyString(aircraftSimString, 25);
     delay(1000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
@@ -164,34 +123,52 @@ void SimulatorRealFlight9::InitSimAirport() {
     // Always start unblocking - in case sim is currently blocked
     UnBlockSim();
 
+    //Close all gadgets
     KeyboardCtl::Press(KEY_LEFT_ALT);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    KeyboardCtl::StreamKeyChar('a', charDuration);
+    KeyboardCtl::StreamKeyChar('g');
+    KeyboardCtl::StreamKeyChar('c');
     KeyboardCtl::Release(KEY_LEFT_ALT);
     delay(delayConst);
 
-    KeyboardCtl::StreamKeyChar('e', charDuration);
+
+    // Use "Quick Load" search function to get airport without timing issues
+    KeyboardCtl::Press(KEY_LEFT_CTRL);
+    KeyboardCtl::StreamKeyChar('f');
+    KeyboardCtl::Release(KEY_LEFT_CTRL);
     delay(delayConst);
-    KeyboardCtl::StreamKeyChar('v', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('r', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('g', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('r', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('e', charDuration);
-    delay(delayConst);
-    KeyboardCtl::StreamKeyChar('n', charDuration);
-    delay(1000);
+
+    // Enter name of airport
+    char airportSimString[] = "evergreen";
+    KeyboardCtl::streamKeyString(airportSimString, 25);
+    delay(100);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
 }
 
         }
     }
 }
+
+
+// ###################### USEFUL NOTES
+// CTRL+SHIFT+C => Console gadget => help shows everything!
+
+// aircraft_reset
+
+// gadget_closeall
+
+// environmentReset
+
+// titleBar (toggle display)
+
+// aircraft_select <- Keypress timing challenge - use CTRL-F instead!
+
+// airport_select <- Keypress timing challenge - use CTRL-F instead!
+
+
+// Use Alt,a,a to start pause
+
+// Use ESC to end pause
+
+// Alt,G,C => Close all gadgets
+// 
+// CTRL+F =>  Quick load                                                                   <-

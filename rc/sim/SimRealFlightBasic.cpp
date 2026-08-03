@@ -20,8 +20,23 @@ void SimulatorRealFlightBasic::InitSim() {
     KeyboardCtl::streamKeyString(killSimString, 25);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(2000);
 
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
+    char NotepadString[] = "notepad";
+    KeyboardCtl::streamKeyString(NotepadString, 25);
+    delay(3000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(500);
+    KeyboardCtl::Press(KEY_LEFT_ALT);
+    KeyboardCtl::StreamKeyChar(' ');
+    KeyboardCtl::StreamKeyChar('a');
+    KeyboardCtl::Release(KEY_LEFT_ALT);
+    char NotepadString2[] = "Warning: To work correctly, SimTimer requires that NumLock is enabled.";
+    KeyboardCtl::streamKeyString(NotepadString2, 25);
+    delay(3000);
+
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char delIniString[] = "cmd.exe /c del \"c:\\users\\%USERNAME%\\Documents\\RealFlight Basic\\RealFlightBasic.ini\"";
