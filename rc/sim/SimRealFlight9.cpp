@@ -146,8 +146,7 @@ void SimulatorRealFlight9::InitSimAirport() {
 
         }
     }
-}
-
+} 
 
 // ###################### USEFUL NOTES
 // CTRL+SHIFT+C => Console gadget => help shows everything!
