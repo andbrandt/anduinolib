@@ -13,11 +13,19 @@ void SimulatorRealFlight9::InitSim() {
     delay(100);
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
-    char killSimString[] = "taskkill /IM RealFlight.exe";
+    char killSimString[] = "taskkill  /f /t /im RealFlight.exe";
     KeyboardCtl::streamKeyString(killSimString, 1);
     delay(500);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
     delay(3000);
+
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
+    delay(500);
+    char killNotepadString[] = "taskkill /f /t /im notepad.exe";
+    KeyboardCtl::streamKeyString(killNotepadString, 25);
+    delay(3000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(2000);
 
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);

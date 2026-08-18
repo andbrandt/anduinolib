@@ -1,5 +1,7 @@
 #include "Debug.hpp"
 
+bool safeMode = true;
+
 #ifdef DEBUG
 bool dbg_enabled = false;
 

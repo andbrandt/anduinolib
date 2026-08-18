@@ -16,8 +16,16 @@ void SimulatorRealFlightBasic::InitSim() {
 
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
-    char killSimString[] = "taskkill /IM RealFlight.exe";
+    char killSimString[] = "taskkill /f /t /im RealFlight.exe";
     KeyboardCtl::streamKeyString(killSimString, 25);
+    delay(3000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(2000);
+
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
+    delay(500);
+    char killNotepadString[] = "taskkill /f /t /im notepad.exe";
+    KeyboardCtl::streamKeyString(killNotepadString, 25);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
     delay(2000);
@@ -56,8 +64,11 @@ void SimulatorRealFlightBasic::InitSim() {
 
     // Start selecting Easy Aircraft after deleting ini file
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
+    delay(500);
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
+    delay(500);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
+    delay(500);
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
 
     delay(500);
@@ -112,100 +123,97 @@ void SimulatorRealFlightBasic::UnBlockSim() {
 
 void SimulatorRealFlightBasic::EasyAircraft() {
     int delayConst = 10;
+    int arrowDelayConst = 25;
 
-    // Always start unblocking - in case sim is currently blocked
-//    UnBlockSim();
     delay(250);
 
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
-    delay(delayConst);
+    delay(1000);
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
-    delay(delayConst);
+    delay(100);
 
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_UP_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
 }
 
 void SimulatorRealFlightBasic::AcroAircraft() {
     int delayConst = 10;
+    int arrowDelayConst = 25;
 
-    // Always start unblocking - in case sim is currently blocked
-//    UnBlockSim();
     delay(250);
-    delay(10);
 
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
-    delay(delayConst);
+    delay(1000);
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
-    delay(delayConst);
+    delay(100);
 
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
     KeyboardCtl::StreamKeyChar(KEY_DOWN_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 
     KeyboardCtl::StreamKeyChar(KEY_RIGHT_ARROW, delayConst);
-    delay(delayConst);
+    delay(arrowDelayConst);
 }
 
         }

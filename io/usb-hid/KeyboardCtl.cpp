@@ -126,7 +126,7 @@ static void KeyboardCtl::StreamKeyMap(unsigned char key, unsigned int millisDela
 }
 
 static void KeyboardCtl::StreamKeyMap(unsigned char key) {
-    if (!true) return;
+    // if (!true) return;
     StreamKeyMap(key, 0);
 }
 
