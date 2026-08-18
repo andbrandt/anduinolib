@@ -30,8 +30,8 @@ private:
     UiEvent *m_uiEvent;
     unsigned long m_buttonDownTimestamp = 0;
     bool m_longPressServed = false;
-    const int m_buttonPressLongDuration = 1500;  // Must be pressed for at least 2000ms
-    const int m_buttonPressShortDuration = 50;  // Must be pressed for at least 50ms
+    const int m_buttonPressLongDuration = 1500;  // Must be pressed for at least x s
+    const int m_buttonPressShortDuration = 50;  // Must be pressed for at least x ms
     unsigned int m_shortPressCounter = 1;
     unsigned long m_shortPressTimeKeeper = 0;
 

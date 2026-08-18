@@ -11,12 +11,35 @@ namespace anduinolib {
 void SimulatorPhoenix::InitSim() {
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
-    char killSimString[] = "taskkill /IM phoenixRC.exe";
+    char killSimString[] = "taskkill /f /t /im phoenixRC.exe";
     KeyboardCtl::streamKeyString(killSimString);
     delay(3000);
     KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(3000);
 
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
+    char killNotepadString[] = "taskkill /f /t /im notepad.exe";
+    KeyboardCtl::streamKeyString(killNotepadString, 25);
+    delay(3000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(2000);
+
+    KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
+    delay(500);
+    char NotepadString[] = "notepad";
+    KeyboardCtl::streamKeyString(NotepadString, 25);
+    delay(3000);
+    KeyboardCtl::StreamKeyChar(KEY_RETURN);
+    delay(500);
+    KeyboardCtl::Press(KEY_LEFT_ALT);
+    KeyboardCtl::StreamKeyChar(' ');
+    KeyboardCtl::StreamKeyChar('a');
+    KeyboardCtl::Release(KEY_LEFT_ALT);
+    char NotepadString2[] = "Warning: To work correctly, SimTimer requires that NumLock is enabled.";
+    KeyboardCtl::streamKeyString(NotepadString2, 25);
+    delay(3000);
+
     KeyboardCtl::StreamKeyChar(KEY_LEFT_GUI);
     delay(500);
     char launchSimString[] = "phoenixRC";

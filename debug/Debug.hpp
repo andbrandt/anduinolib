@@ -3,6 +3,10 @@
 
 #include <arduino.h>
 
+extern bool safeMode;
+
+// #define DEBUG
+
 #ifdef DEBUG
     void DebugSetup();
     extern bool dbg_enabled;

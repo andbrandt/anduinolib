@@ -102,6 +102,18 @@ static void KeyboardCtl::StreamKeyMap(unsigned char key, unsigned int millisDela
             Keyboard.release(KEY_KP_SLASH);
             delay(millisDelay);
             break;
+        case '-':
+            Keyboard.press(KEY_KP_MINUS);
+            delay(millisDelay);
+            Keyboard.release(KEY_KP_MINUS);
+            delay(millisDelay);
+            break;
+        case '+':
+            Keyboard.press(KEY_KP_PLUS);
+            delay(millisDelay);
+            Keyboard.release(KEY_KP_PLUS);
+            delay(millisDelay);
+            break;
 
         default:
             Keyboard.press(key);
@@ -114,7 +126,7 @@ static void KeyboardCtl::StreamKeyMap(unsigned char key, unsigned int millisDela
 }
 
 static void KeyboardCtl::StreamKeyMap(unsigned char key) {
-    if (!true) return;
+    // if (!true) return;
     StreamKeyMap(key, 0);
 }
 

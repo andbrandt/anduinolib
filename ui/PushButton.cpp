@@ -23,7 +23,7 @@ bool PushButton::Begin(UiEvent *uiEvent, UiEvent::UiEventsExternal longPressEven
     DEBUG_PRINT(longPressEvent);
     DEBUG_PRINT(shortPressX1Event);
     DEBUG_PRINT(shortPressX2Event);
-
+    
     m_uiEvent = uiEvent;
 
     m_longPressEvent = longPressEvent;
